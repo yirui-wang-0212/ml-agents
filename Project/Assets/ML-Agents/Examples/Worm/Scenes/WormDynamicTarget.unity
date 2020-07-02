@@ -1206,6 +1206,57 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3219288747696361563, guid: 75720cc09f5b24833af829458ac467fa,
+        type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 11400000, guid: 9e78ecfd26cf1416c8ca35b51d8d6b22,
+        type: 3}
+    - target: {fileID: 3554233917150512821, guid: 75720cc09f5b24833af829458ac467fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3631016867922337105, guid: 75720cc09f5b24833af829458ac467fa,
+        type: 3}
+      propertyPath: onTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3631016867922337105, guid: 75720cc09f5b24833af829458ac467fa,
+        type: 3}
+      propertyPath: onTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3631016867922337105, guid: 75720cc09f5b24833af829458ac467fa,
+        type: 3}
+      propertyPath: onTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3631016867922337105, guid: 75720cc09f5b24833af829458ac467fa,
+        type: 3}
+      propertyPath: onTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1854857586}
+    - target: {fileID: 3631016867922337105, guid: 75720cc09f5b24833af829458ac467fa,
+        type: 3}
+      propertyPath: onTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TouchedTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 3631016867922337105, guid: 75720cc09f5b24833af829458ac467fa,
+        type: 3}
+      propertyPath: onTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3631016867922337105, guid: 75720cc09f5b24833af829458ac467fa,
+        type: 3}
+      propertyPath: onCollisionEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108277954154285742, guid: 75720cc09f5b24833af829458ac467fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: agent
+      objectReference: {fileID: 0}
     - target: {fileID: 7516351800607109742, guid: 75720cc09f5b24833af829458ac467fa,
         type: 3}
       propertyPath: m_Name
@@ -1265,6 +1316,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294870767489905546, guid: 75720cc09f5b24833af829458ac467fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75720cc09f5b24833af829458ac467fa, type: 3}
@@ -1482,6 +1538,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75720cc09f5b24833af829458ac467fa, type: 3}
+--- !u!1 &1359237214 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6108277954154285742, guid: 75720cc09f5b24833af829458ac467fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 956508937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1359237218
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359237214}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: -0.13, y: 1.05, z: -5}
 --- !u!1 &1392866527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,6 +1979,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75720cc09f5b24833af829458ac467fa, type: 3}
+--- !u!114 &1854857586 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6108094741297379326, guid: 75720cc09f5b24833af829458ac467fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 956508937}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292fce25fb4b541f4b007a7b92c5923c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1897122097
 PrefabInstance:
   m_ObjectHideFlags: 0
