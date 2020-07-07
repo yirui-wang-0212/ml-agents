@@ -16,6 +16,8 @@ public class Ball3DAgent : Agent
         SetResetParameters();
     }
 
+    // 观察环境：
+    // 观察上一次渲染结果
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(gameObject.transform.rotation.z);
@@ -26,6 +28,8 @@ public class Ball3DAgent : Agent
 
     public override void OnActionReceived(float[] vectorAction)
     {
+        // 根据策略执行 Action：
+        // 调整 Shader 参数并进行渲染
         var actionZ = 2f * Mathf.Clamp(vectorAction[0], -1f, 1f);
         var actionX = 2f * Mathf.Clamp(vectorAction[1], -1f, 1f);
 
@@ -40,6 +44,9 @@ public class Ball3DAgent : Agent
         {
             gameObject.transform.Rotate(new Vector3(1, 0, 0), actionX);
         }
+
+        // Reward：
+       // 渲染后损失函数
         if ((ball.transform.position.y - gameObject.transform.position.y) < -2f ||
             Mathf.Abs(ball.transform.position.x - gameObject.transform.position.x) > 3f ||
             Mathf.Abs(ball.transform.position.z - gameObject.transform.position.z) > 3f)
