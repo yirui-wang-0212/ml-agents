@@ -90,7 +90,7 @@ public class Ball3DAgent : Agent
         // 小球在 y（相对平台高度）为 4 的地方，同时随机 x、z 值出现
         ball.transform.position = new Vector3(Random.Range(-1.5f, 1.5f), 4f, Random.Range(-1.5f, 1.5f))
             + gameObject.transform.position;
-        // Agent重置时，同时重置参数
+        // Agent 重置时，同时重置参数
         // Reset the parameters when the Agent is reset.
         SetResetParameters();
     }
