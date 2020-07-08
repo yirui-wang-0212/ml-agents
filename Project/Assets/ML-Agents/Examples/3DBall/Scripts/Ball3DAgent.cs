@@ -35,13 +35,13 @@ public class Ball3DAgent : Agent
         // 根据策略执行 Action：
         // 训练 Shader 项目在此处应为：调整 Shader 参数并进行渲染
 
-        // 控制平台绕Z轴、X轴旋转的值
+        // 控制平台绕 Z 轴、X 轴旋转的值
         // 用 Mathf.Clamp() 将响应的动作值限制到 -1 到 1
         var actionZ = 2f * Mathf.Clamp(vectorAction[0], -1f, 1f);
         var actionX = 2f * Mathf.Clamp(vectorAction[1], -1f, 1f);
 
         // 将两个 if 的条件去掉训练，发现平台训练过程中比较不稳，抖动较大，因为只要一来值就让平台旋转，可能这里会造成平台一直在调整姿态的过程中
-        // 只有在平台Z轴旋转值<0.25f且actionZ>0、或平台Z轴旋转值>0.25f且actionZ<0时才对平台的姿态进行动作，这样就相当于设置了一个缓冲区间，不会让平台不停调整姿态，而是根据小球情况来适当调整姿态。
+        // 只有在平台Z轴旋转值 < 0.25f 且 actionZ > 0、或平台Z轴旋转值 > 0.25f 且 actionZ < 0 时才对平台的姿态进行动作，这样就相当于设置了一个缓冲区间，不会让平台不停调整姿态，而是根据小球情况来适当调整姿态。
         // 平台绕 Z 轴旋转响应
         if ((gameObject.transform.rotation.z < 0.25f && actionZ > 0f) ||
             (gameObject.transform.rotation.z > -0.25f && actionZ < 0f))
@@ -76,15 +76,22 @@ public class Ball3DAgent : Agent
         }
     }
 
+    // 复位
     public override void OnEpisodeBegin()
     {
+        // 复位平台旋转角度
         gameObject.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+        // 令平台随机绕x轴旋转 -10~10 度
         gameObject.transform.Rotate(new Vector3(1, 0, 0), Random.Range(-10f, 10f));
+        // 令平台随机绕z轴旋转 -10~10 度
         gameObject.transform.Rotate(new Vector3(0, 0, 1), Random.Range(-10f, 10f));
+        // 小球刚体速度变为 0
         m_BallRb.velocity = new Vector3(0f, 0f, 0f);
+        // 小球在 y（相对平台高度）为 4 的地方，同时随机 x、z 值出现
         ball.transform.position = new Vector3(Random.Range(-1.5f, 1.5f), 4f, Random.Range(-1.5f, 1.5f))
             + gameObject.transform.position;
-        //Reset the parameters when the Agent is reset.
+        // Agent重置时，同时重置参数
+        // Reset the parameters when the Agent is reset.
         SetResetParameters();
     }
 
@@ -97,7 +104,7 @@ public class Ball3DAgent : Agent
     public void SetBall()
     {
         // 从 Academy 中获取小球的属性（质量、比例）
-        //Set the attributes of the ball by fetching the information from the academy
+        // Set the attributes of the ball by fetching the information from the academy
         m_BallRb.mass = m_ResetParams.GetWithDefault("mass", 1.0f);
         var scale = m_ResetParams.GetWithDefault("scale", 1.0f);
         ball.transform.localScale = new Vector3(scale, scale, scale);
